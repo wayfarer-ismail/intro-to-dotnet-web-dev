@@ -46,16 +46,16 @@ foreach (string name in studentNames)
     string currentStudent = name;
 
     if (currentStudent == "Sophia")
-        studentScores = sophiaScores;
+            studentScores = sophiaScores;
 
     else if (currentStudent == "Andrew")
-        studentScores = andrewScores;
+            studentScores = andrewScores;
 
     else if (currentStudent == "Emma")
-        studentScores = emmaScores;
+            studentScores = emmaScores;
 
     else if (currentStudent == "Logan")
-        studentScores = loganScores;
+            studentScores = loganScores;
 
     int gradedAssignments = 0;
     int gradedExtraCreditAssignments = 0;

@@ -47,17 +47,24 @@ foreach (string name in studentNames)
 {
     string currentStudent = name;
 
-    if (currentStudent == "Sophia")
-        studentScores = sophiaScores;
+    switch (currentStudent)
+    {
+        case "Sophia":
+            studentScores = sophiaScores;
+            break;
 
-    else if (currentStudent == "Andrew")
-        studentScores = andrewScores;
+        case "Andrew":
+            studentScores = andrewScores;
+            break;
 
-    else if (currentStudent == "Emma")
-        studentScores = emmaScores;
+        case "Emma":
+            studentScores = emmaScores;
+            break;
 
-    else if (currentStudent == "Logan")
-        studentScores = loganScores;
+        case "Logan":
+            studentScores = loganScores;
+            break;
+    }
 
     int sumAssignmentScores = 0;
 
@@ -82,44 +89,10 @@ foreach (string name in studentNames)
 
     currentStudentGrade = (decimal)(sumAssignmentScores) / examAssignments;
 
-    if (currentStudentGrade >= 97)
-        currentStudentLetterGrade = "A+";
+    String[] letterGrades = new string[] { "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F" };
+    int index = currentStudentGrade >= 60 ? (int)Math.Round((currentStudentGrade - 60) / 3) : 12;
 
-    else if (currentStudentGrade >= 93)
-        currentStudentLetterGrade = "A";
-
-    else if (currentStudentGrade >= 90)
-        currentStudentLetterGrade = "A-";
-
-    else if (currentStudentGrade >= 87)
-        currentStudentLetterGrade = "B+";
-
-    else if (currentStudentGrade >= 83)
-        currentStudentLetterGrade = "B";
-
-    else if (currentStudentGrade >= 80)
-        currentStudentLetterGrade = "B-";
-
-    else if (currentStudentGrade >= 77)
-        currentStudentLetterGrade = "C+";
-
-    else if (currentStudentGrade >= 73)
-        currentStudentLetterGrade = "C";
-
-    else if (currentStudentGrade >= 70)
-        currentStudentLetterGrade = "C-";
-
-    else if (currentStudentGrade >= 67)
-        currentStudentLetterGrade = "D+";
-
-    else if (currentStudentGrade >= 63)
-        currentStudentLetterGrade = "D";
-
-    else if (currentStudentGrade >= 60)
-        currentStudentLetterGrade = "D-";
-
-    else
-        currentStudentLetterGrade = "F";
+    currentStudentLetterGrade = letterGrades[index];
 
     // Student         Grade
     // Sophia:         92.2    A-
@@ -128,5 +101,5 @@ foreach (string name in studentNames)
 }
 
 // required for running in VS Code (keeps the Output windows open to view results)
-Console.WriteLine("\n\rPress the Enter key to continue");
+Console.WriteLine("\n\rPress the Enter key to continue, or else");
 Console.ReadLine();
